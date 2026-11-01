@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          repository: 'TelegramMessenger/Telegram-iOS'
           submodules: recursive
       - name: Generate Project
         run: python3 build-system/Make/Make.py --disableProvisioningProfiles generateProject
