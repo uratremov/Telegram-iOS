@@ -8,6 +8,10 @@ jobs:
         with:
           repository: 'TelegramMessenger/Telegram-iOS'
           submodules: recursive
+          fetch-depth: 1
+      - name: Setup Build Tools
+        run: |
+          brew install cmake ninja bignum yasm
       - name: Generate Project
         run: python3 build-system/Make/Make.py --disableProvisioningProfiles generateProject
       - name: Build Simulator App
